@@ -6,11 +6,18 @@ public class VirtualPetApplication {
 
     public static void main(String[] args) {
         VirtualPet phantom = new VirtualPet("Phantom", 5, 3, 4);
-
+        VirtualPetShelter shelter = new VirtualPetShelter();
+        shelter.admitPet(phantom);
+        shelter.feedAll();
+        shelter.waterAll();
+        shelter.playAll();
+        shelter.adoptPet();
+        shelter.tick();
 
         Scanner input = new Scanner(System.in);
         while (phantom.isAlive()) {
-            phantom.status();
+            shelter.showAllPetStatus();
+
 
             System.out.println("enter selection : Feed|Water|Play|Quit");
             String userSelection = input.nextLine();
@@ -27,9 +34,7 @@ public class VirtualPetApplication {
                     phantom.boredom();
             }
         }
-
-
-        //Interact with a virtual_pet.VirtualPet object in this method
+        
     }
 
 }

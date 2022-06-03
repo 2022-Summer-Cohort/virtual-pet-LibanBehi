@@ -67,7 +67,7 @@ package virtual_pet;
             return true;
         }
         public void status () {
-            System.out.println("hunger: " + hungerLevel + " thirst: " + thirstLevel + " boredom: " + boredomLevel);
+            System.out.println(petName +"- hunger: " + hungerLevel + " thirst: " + thirstLevel + " boredom: " + boredomLevel);
         }
     }
 
