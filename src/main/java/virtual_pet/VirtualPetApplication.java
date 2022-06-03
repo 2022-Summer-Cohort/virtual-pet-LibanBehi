@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class VirtualPetApplication {
 
     public static void main(String[] args) {
-        VirtualPet phantom = new VirtualPet("Phantom", 5, 3, 4);
+        VirtualPet phantom = new VirtualPet("Phantom", 8, 6, 7);
         VirtualPetShelter shelter = new VirtualPetShelter();
         shelter.admitPet(phantom);
         shelter.feedAll();
@@ -23,18 +23,27 @@ public class VirtualPetApplication {
             String userSelection = input.nextLine();
             switch (userSelection.toLowerCase()) {
                 case "feed":
-                    phantom.feed();
+                    shelter.feedAll();
                     break;
 
                 case "water":
-                    phantom.thirst();
+                    shelter.waterAll();
                     break;
 
                 case "play":
-                    phantom.boredom();
+                    shelter.playAll();
+                    break;
+
+                case "quit":
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Selection error Game over");
             }
+
+
         }
-        
+
     }
 
 }

@@ -9,9 +9,9 @@ public class VirtualPetShelter {
 
     public VirtualPetShelter() {
         shelter = new ArrayList<>();
-        shelter.add(new VirtualPet("ramadan", 7, 2, 3));
-        shelter.add(new VirtualPet("Gaajo", 9, 6, 4));
-        shelter.add(new VirtualPet("Loki", 4, 1, 6));
+        shelter.add(new VirtualPet("ramadan", 7, 6, 8));
+        shelter.add(new VirtualPet("Gaajo", 9, 6, 5));
+        shelter.add(new VirtualPet("Loki", 4, 8, 6));
 
     }
 
@@ -57,5 +57,8 @@ public class VirtualPetShelter {
         for (VirtualPet pet : shelter) {
             pet.tick();
         }
+    }
+    public VirtualPet getPet(int index){
+        return shelter.get(index);
     }
 }
