@@ -11,7 +11,6 @@ public class VirtualPetApplication {
         shelter.feedAll();
         shelter.waterAll();
         shelter.playAll();
-        shelter.adoptPet();
         shelter.tick();
 
         Scanner input = new Scanner(System.in);
@@ -19,7 +18,7 @@ public class VirtualPetApplication {
             shelter.showAllPetStatus();
 
 
-            System.out.println("enter selection : Feed|Water|Play|Quit");
+            System.out.println("enter selection : Feed|Water|Play|Adopt|Admit|Quit");
             String userSelection = input.nextLine();
             switch (userSelection.toLowerCase()) {
                 case "feed":
@@ -37,9 +36,23 @@ public class VirtualPetApplication {
                 case "quit":
                     System.exit(0);
                     break;
+                case "adopt":
+                    String name;
+                    System.out.println("which pet would you want to adopt");
+                    name = input.nextLine();
+                    shelter.adoptPet(name);
+                    break;
+                case "admit":
+                    System.out.println("enter the name of pet admitted");
+                    String petName = input.nextLine();
+                    VirtualPet pet1 = new VirtualPet(petName,5,5,5);
+                    shelter.admitPet(pet1);
+                    break;
+
                 default:
                     System.out.println("Selection error Game over");
             }
+
 
 
         }

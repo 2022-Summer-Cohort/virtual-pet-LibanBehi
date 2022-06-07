@@ -15,11 +15,10 @@ public class VirtualPetShelter {
 
     }
 
-    public void adoptPet() {
-        for (VirtualPet pet : shelter) {
-            pet.getName();
+    public void adoptPet(String name) {
+         shelter.remove(findPetByName(name));
         }
-    }
+
 
     public void admitPet(VirtualPet Pet) {
         shelter.add(Pet);
@@ -60,5 +59,13 @@ public class VirtualPetShelter {
     }
     public VirtualPet getPet(int index){
         return shelter.get(index);
+    }
+    public VirtualPet findPetByName(String name) {
+        for (VirtualPet pet : shelter) {
+            if (pet.getName().equalsIgnoreCase(name)) {
+                return pet;
+            }
+        }
+        return null;
     }
 }
