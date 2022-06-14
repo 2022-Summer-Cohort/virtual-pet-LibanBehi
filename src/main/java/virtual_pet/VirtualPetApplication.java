@@ -5,20 +5,19 @@ import java.util.Scanner;
 public class VirtualPetApplication {
 
     public static void main(String[] args) {
-        VirtualPet phantom = new VirtualPet("Phantom", 8, 6, 7);
+        VirtualPet phantom = new RoboticDog(" Phantom", 8, 6);
         VirtualPetShelter shelter = new VirtualPetShelter();
         shelter.admitPet(phantom);
         shelter.feedAll();
         shelter.waterAll();
         shelter.playAll();
         shelter.tick();
-
         Scanner input = new Scanner(System.in);
         while (phantom.isAlive()) {
             shelter.showAllPetStatus();
 
 
-            System.out.println("enter selection : Feed|Water|Play|Adopt|Admit|Quit");
+            System.out.println("Enter Selection : Feed|Water|Play|Adopt|Admit|Type of Pet|Oil Robots|Maintain Robots|Clean Litter|Clean Cage|Walk|Quit");
             String userSelection = input.nextLine();
             switch (userSelection.toLowerCase()) {
                 case "feed":
@@ -37,26 +36,46 @@ public class VirtualPetApplication {
                     System.exit(0);
                     break;
                 case "adopt":
-                    String name;
-                    System.out.println("which pet would you want to adopt");
-                    name = input.nextLine();
-                    shelter.adoptPet(name);
+                    System.out.println("Which Pet Would You Want To Adopt");
+                    String petName;
+                    petName = input.nextLine();
+                    shelter.adoptPet(petName);
                     break;
                 case "admit":
-                    System.out.println("enter the name of pet admitted");
-                    String petName = input.nextLine();
-                    VirtualPet pet1 = new VirtualPet(petName,5,5,5);
+                    System.out.println("Enter The Name and Type Of Pet Admitted ");
+                    petName = input.nextLine();
+                    VirtualPet pet1 = new RoboticCat(petName, 5, 5);
                     shelter.admitPet(pet1);
+                    break;
+                case "walk":
+                    shelter.walk();
+                    break;
+                case "oil robots":
+                    shelter.oilRobots();
+                    break;
+                case "maintain robots":
+                    shelter.MaintainRobots();
+                    break;
+                case "type of pet":
+                    System.out.println("Which type of Pet Would You Like to Choose?");
+                    shelter.listPetsByType("Robotic Dog|Robotic Cat|Organic Dog|Organic Cat");
+                    break;
+                case "clean cage":
+                    shelter.CleanCage();
+                    break;
+                case "clean litter":
+                    shelter.CleanLitterBox();
                     break;
 
                 default:
                     System.out.println("Selection error Game over");
             }
-
-
-
         }
-
     }
-
 }
+
+
+
+
+
+

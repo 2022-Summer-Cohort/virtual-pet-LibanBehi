@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class VirtualPetTest {
-    private VirtualPet underTest = new VirtualPet("Phantom", 10, 10, 10);
+    private VirtualPet underTest = new RoboticDog("Ramadan", 7, 7);
 
     @BeforeEach
     void setUp() {
