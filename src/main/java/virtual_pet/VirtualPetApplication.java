@@ -17,7 +17,7 @@ public class VirtualPetApplication {
             shelter.showAllPetStatus();
 
 
-            System.out.println("Enter Selection : Feed|Water|Play|Adopt|Admit|Type of Pet|Oil Robots|Maintain Robots|Clean Litter|Clean Cage|Walk|Quit");
+            System.out.println("Enter Selection : Feed|Water|Play|Adopt|Admit|Oil Robots|Maintain Robots|Clean Litter|Clean Cage|Walk|Quit");
             String userSelection = input.nextLine();
             switch (userSelection.toLowerCase()) {
                 case "feed":
@@ -55,10 +55,6 @@ public class VirtualPetApplication {
                     break;
                 case "maintain robots":
                     shelter.MaintainRobots();
-                    break;
-                case "type of pet":
-                    System.out.println("Which type of Pet Would You Like to Choose?");
-                    shelter.listPetsByType("Robotic Dog|Robotic Cat|Organic Dog|Organic Cat");
                     break;
                 case "clean cage":
                     shelter.CleanCage();

@@ -73,21 +73,6 @@ public class VirtualPetShelter {
         return null;
     }
 
-    public void listPetsByType(String type) {
-        for (VirtualPet pet : shelter) {
-            if (type.equalsIgnoreCase("robotic")) {
-                if (pet instanceof RoboticPet) {
-                    System.out.print(pet.getPetName() + ", ");
-                }
-            } else {
-                if (pet instanceof OrganicPet) {
-                    System.out.print(pet.getPetName() + ", ");
-                }
-
-            }
-            System.out.println("");
-        }
-    }
 
     public void walk() {
         for (VirtualPet pet : shelter) {
