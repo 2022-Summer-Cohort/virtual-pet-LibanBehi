@@ -8,7 +8,7 @@ public class OrganicCat extends OrganicPet{
 
     @Override
     public void greeting() {
-        System.out.println("Organic cat " + petName + " I Am a Organic Pet!" + " My Hunger Level Is " + hungerLevel + " My Boredom Level Is " + boredomLevel + " My Litter Box is " + cleanliness + "My thirst Level is" + thirstLevel );
+        System.out.println("Organic cat " + petName + " I Am a Organic Pet!" + " My Hunger Level Is " + hungerLevel + " My Boredom Level Is " + boredomLevel + " My Litter Box is " + cleanliness + "My thirst Level is " + thirstLevel );
     }
 }
 
